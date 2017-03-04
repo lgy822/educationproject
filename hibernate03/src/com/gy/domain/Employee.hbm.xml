@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 映射文件需要一个dtd文件 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.gy.domain">
+	<class name="Employee" table="employee">
+	<!-- 
+		<id name="eid" column="eid" type="java.lang.Integer">
+			<generator class="sequence">
+				<param name="sequence">seq_eid</param>
+			</generator>
+		</id> -->
+		<id name="eid" column="eid" type="java.lang.Integer">
+			<generator class="increment"></generator>
+		</id>
+		<!-- 对其他属性 -->
+		<property name="ename" type="java.lang.String">
+			<column name="ename" not-null="false"/>
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email" not-null="false"/>
+		</property>
+		<!--  
+		<property name="birthday" type="java.util.Date">
+			<column name="birthday" not-null="false"/>
+		</property>
+		-->
+	</class>
+	
+</hibernate-mapping>
